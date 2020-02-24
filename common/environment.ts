@@ -4,6 +4,7 @@ export const environment = {
   },
   db: {
     host: 'offshore-aurora-instance-1.cmljeskaju8n.us-west-2.rds.amazonaws.com',
+    //host: 'offshore-db.cmljeskaju8n.us-west-2.rds.amazonaws.com',
     port: 3306,
     user: 'admin', 
     password: 'jr200287'
