@@ -1,6 +1,6 @@
-const { connection } = require('./.env')
+const { connection } = require('../.env')
 
-module.exports = {
+const config = {
   development: {
     client: 'mysql',
     connection
@@ -30,3 +30,5 @@ module.exports = {
     }
   }
 };
+
+export default config;

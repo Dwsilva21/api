@@ -1,5 +1,4 @@
-// import * as db from '../data/db';
-const db = require('../data/db');
+import db from '../data/db';
 
 const eventosQuery = {
   async buscarEventos(): Promise<Array<any>> {
@@ -22,7 +21,7 @@ const eventosMutation = {
 
     const retorno = await db('TML_OFF_EVENTOS')
       .insert(novoEvento)
-      .then((res: any) => {
+      .then(() => {
         return Promise.resolve('OK');
       })
       .catch((err: any) => {
@@ -31,12 +30,11 @@ const eventosMutation = {
 
     return retorno;
   },
-
   async alterarEvento(_: void, {dados}: any): Promise<string>{
     const retorno = await db('TML_OFF_EVENTOS')
       .where({ CODIGO: dados.codigo })
       .update({ DESCRICAO: dados.descricao })
-      .then((res: any) => {
+      .then(() => {
         return Promise.resolve('OK');
       })
       .catch((err: any) => {
