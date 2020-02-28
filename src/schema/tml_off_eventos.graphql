@@ -4,11 +4,6 @@ type EVENTOS {
   cor: String
 }
 
-type Mutation {
-  novoEvento(dados: EVENTOS_CADASTRAR): String
-  alterarEvento(dados: EVENTOS_ALTERAR): String
-}
-
 input EVENTOS_CADASTRAR {
   codigo: String,
   descricao: String,
@@ -18,4 +13,13 @@ input EVENTOS_CADASTRAR {
 input EVENTOS_ALTERAR {
   codigo: String,
   descricao: String
+}
+
+type Mutation {
+  novoEvento(dados: EVENTOS_CADASTRAR): String
+  alterarEvento(dados: EVENTOS_ALTERAR): String
+}
+
+extend type Query {
+  buscarEventos: [EVENTOS!]
 }

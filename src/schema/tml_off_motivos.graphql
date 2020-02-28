@@ -1,0 +1,9 @@
+type MOTIVOS {
+  codigo: Int
+  descricao: String
+  ativo: String
+}
+
+extend type Query {
+  buscarMotivos: [MOTIVOS!]
+}
