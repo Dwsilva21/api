@@ -1,12 +1,13 @@
-export const environment = {
-  server: {
-    port: process.env.PORT || 4000
-  },
-  db: {
-    host: 'offshore-aurora-instance-1.cmljeskaju8n.us-west-2.rds.amazonaws.com',
-    //host: 'offshore-db.cmljeskaju8n.us-west-2.rds.amazonaws.com',
-    port: 3306,
-    user: 'admin', 
-    password: 'jr200287'
-  }
+const server = {
+  port: process.env.PORT || 4000
 }
+
+const connection = {
+  host: 'mysql.uhserver.com',
+  port: 3306,
+  database: 'offshore',
+  user: 'offshore',
+  password: '@projeto21@'
+}
+
+export default { connection, server };

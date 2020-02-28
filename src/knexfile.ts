@@ -1,14 +1,14 @@
-const { connection } = require('../.env')
+import connection from './common/environment'
 
 const config = {
   development: {
     client: 'mysql',
-    connection
+    ...connection
   },
 
   staging: {
     client: 'mysql',
-    connection,
+    ...connection,
     pool: {
       min: 2,
       max: 10
@@ -20,7 +20,7 @@ const config = {
 
   production: {
     client: 'mysql',
-    connection,
+    ...connection,
     pool: {
       min: 2,
       max: 10

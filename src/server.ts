@@ -5,6 +5,8 @@ import { createServer } from 'http';
 import compression from 'compression';
 import cors from 'cors';
 import schema from './schema';
+import * as serverEnv from './common/environment';
+import bodyParser from 'body-parser';
 
 const app = express();
 const server = new ApolloServer({
@@ -14,11 +16,13 @@ const server = new ApolloServer({
 
 app.use('*', cors());
 app.use(compression());
+app.use(bodyParser.text({ type: 'application/graphql' }));
 
 server.applyMiddleware({ app, path: '/graphql' });
 
 const httpServer = createServer(app);
+const { port } = serverEnv.default.server;
 
-httpServer.listen({ port: 3000 }, (): void => {
-  console.log(`\n🚀   Server is now running on http://localhost:3000/graphql`)
+httpServer.listen({ port }, (): void => {
+  console.log(`\n🚀   Server is now running on http://localhost:${port}/graphql`)
 });
