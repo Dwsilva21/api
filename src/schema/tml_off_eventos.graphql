@@ -3,3 +3,13 @@ type EVENTOS {
   descricao: String
   cor: String
 }
+
+type Mutation {
+  novoEvento(dados: EVENTOS_INPUT): String
+}
+
+input EVENTOS_INPUT {
+  codigo: String,
+  descricao: String,
+  cor: String
+}

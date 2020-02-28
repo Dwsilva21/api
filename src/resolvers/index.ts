@@ -1,9 +1,12 @@
 import { IResolvers } from 'graphql-tools';
-import eventos from './tml_off_eventos';
+import tml_off_eventos from './tml_off_eventos';
 
 const resolverMap: IResolvers = {
   Query: {
-    ...eventos
+    ...tml_off_eventos.eventosQuery
+  },
+  Mutation: {
+    ...tml_off_eventos.eventosMutation
   }
 }
 
