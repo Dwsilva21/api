@@ -1,4 +1,4 @@
-import config from '../knexfile';
+import config from '../common/knexfile';
 import Knex from 'knex';
 
 const db = Knex(config.development);

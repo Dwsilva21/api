@@ -1,4 +1,4 @@
-import connection from './common/environment'
+import connection from './environment'
 
 const config = {
   development: {
