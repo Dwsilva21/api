@@ -1,0 +1,5 @@
+type EVENTOS {
+  codigo: String
+  descricao: String
+  cor: String
+}

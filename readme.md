@@ -16,5 +16,5 @@ nodemon dist/main.js
 
 or
 
-npm run dev
+npm start
 ```
