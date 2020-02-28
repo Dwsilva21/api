@@ -5,11 +5,17 @@ type EVENTOS {
 }
 
 type Mutation {
-  novoEvento(dados: EVENTOS_INPUT): String
+  novoEvento(dados: EVENTOS_CADASTRAR): String
+  alterarEvento(dados: EVENTOS_ALTERAR): String
 }
 
-input EVENTOS_INPUT {
+input EVENTOS_CADASTRAR {
   codigo: String,
   descricao: String,
   cor: String
+}
+
+input EVENTOS_ALTERAR {
+  codigo: String,
+  descricao: String
 }

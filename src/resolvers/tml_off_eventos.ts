@@ -30,6 +30,20 @@ const eventosMutation = {
       });
 
     return retorno;
+  },
+
+  async alterarEvento(_: void, {dados}: any): Promise<string>{
+    const retorno = await db('TML_OFF_EVENTOS')
+      .where({ CODIGO: dados.codigo })
+      .update({ DESCRICAO: dados.descricao })
+      .then((res: any) => {
+        return Promise.resolve('OK');
+      })
+      .catch((err: any) => {
+        return Promise.resolve(err.sqlMessage);
+      });
+
+      return retorno;
   }
 };
 
