@@ -1,3 +1,4 @@
+import dotenv from 'dotenv'
 import express from 'express';
 import { ApolloServer } from 'apollo-server-express';
 import depthLimit from 'graphql-depth-limit';
@@ -7,6 +8,8 @@ import cors from 'cors';
 import schema from './schema';
 import * as serverEnv from './common/environment';
 import bodyParser from 'body-parser';
+
+dotenv.config();
 
 const app = express();
 const server = new ApolloServer({

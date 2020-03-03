@@ -11,10 +11,5 @@ npm install
 ## Usage
 
 ```bash
-tsc -watch
-nodemon dist/main.js
-
-or
-
-npm start
+npm run start:dev
 ```
